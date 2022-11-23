@@ -5,7 +5,11 @@ import sys
 
 # local packages
 
-sys.path.append('simple_root/simple_app')
+try:
+    sys.path.append('simple_root/simple_app')
+except NotADirectoryError:
+    sys.path.append('simple_app')
+
 from simports import *
 
 
@@ -24,7 +28,7 @@ def sysargs():
     _args.add_argument('-p', '--port', default=8000,
                        help='Local port number to host server through, default 8000', type=int)
     _args.add_argument('-d', '--debug', help='Run Flask in debug mode?', default=False, action='store_true')
-    _args.add_argument('-f', '--file', default='simple_root/SIMPLE.db',
+    _args.add_argument('-f', '--file', default='SIMPLE.db',
                        help='Database file path relative to current directory, default SIMPLE.db')
     _args = _args.parse_args()
     return _args
@@ -232,7 +236,7 @@ class JSCallbacks:
 
     def __init__(self):
         jsfuncnames = ('dropdownx_js', 'dropdowny_js', 'button_flip', 'normslider', 'reset_slider')
-        with open('simple_root/simple_app/simple_callbacks.js', 'r') as fcall:
+        with open('simple_app/simple_callbacks.js', 'r') as fcall:
             whichvar = ''
             outstr = """"""
             for line in fcall:
