@@ -3,9 +3,9 @@
 	"image": "mcr.microsoft.com/devcontainers/python:3.8",
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
-			"version": "none"
-		},
-		"installJupyterlab": true
+			"version": "none",
+			"installJupyterlab": true
+		}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
