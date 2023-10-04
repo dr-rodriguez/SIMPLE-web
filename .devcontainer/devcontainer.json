@@ -12,10 +12,17 @@
 	"forwardPorts": [8000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r requirements.txt && wget -O SIMPLE.db https://raw.githubusercontent.com/SIMPLE-AstroDB/SIMPLE-binary/main/SIMPLE.db && python -m simple_app.app_simple -d"
+	"postCreateCommand": "pip install -r requirements.txt && wget -O SIMPLE.db https://raw.githubusercontent.com/SIMPLE-AstroDB/SIMPLE-binary/main/SIMPLE.db && python -m simple_app.app_simple -d",
 
 	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+		"vscode": {
+		  "extensions": [
+			"ms-toolsai.jupyter",
+			"ms-python.python"
+		  ]
+		}
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
