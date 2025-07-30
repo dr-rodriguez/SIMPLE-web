@@ -23,9 +23,13 @@
             {{ form.submit(class_="btn btn-primary") }}
         </form>
         <p class="display-6">
-            Query in form: "ra dec radius[optional]"
-            where ra and dec can be in hms/dms or degrees
-            with an optional radius in arcseconds.
+            Query in the form: "ra dec radius[optional]"
+            RA and dec can be provided in decimal degrees or in sexagesimal. These are the expected formats: <br>
+            162.329000 -53.319400 <br>
+            10:49:18.91 -53:19:10 <br>
+            An optional third field can be provided to modify the default search radius of 10 arcseconds. For example, <br>
+            10:49:18.91 -53:19:10 30 <br>
+            performs a 30 arcsecond search around the provided coordinate.
         </p>
     </div>
     <script>
