@@ -24,7 +24,7 @@ from markdown2 import markdown  # using markdown formatting
 import numpy as np  # numerical python
 import pandas as pd  # running dataframes
 import pytest  # testing
-from specutils import Spectrum1D  # spectrum objects
+from specutils import Spectrum  # spectrum objects
 from sqlalchemy.exc import ResourceClosedError, OperationalError  # errors from sqlalchemy
 from sqlite3 import Warning as SqliteWarning  # errors from sqlite
 from tqdm import tqdm  # progress bars

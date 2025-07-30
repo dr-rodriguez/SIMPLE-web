@@ -173,7 +173,7 @@ def spectra_plot(query: str, db_file: str, night_sky_theme: Theme,
 
     # checking each spectra in table
     for spec in t_spectra:
-        spectrum: Spectrum1D = spec['access_url']
+        spectrum = Spectrum.read(spec['access_url'])
 
         # checking spectrum has good units and not only NaNs or 0s
         try:
