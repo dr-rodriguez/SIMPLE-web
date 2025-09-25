@@ -178,7 +178,10 @@ def spectra_plot(query: str, db_file: str, night_sky_theme: Theme,
         spectrum = spec["access_url"]
         if isinstance(spectrum, str):
             print("Re-attempting spectra conversion")
-            spectrum = Spectrum.read(spec["access_url"])
+            try:
+                spectrum = Spectrum.read(spec["access_url"])
+            except Exception as e:
+                print(f"Unable to read {spectrum}. Error: {e}")
 
         # checking spectrum has good units and not only NaNs or 0s
         try:
